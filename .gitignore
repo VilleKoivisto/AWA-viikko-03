@@ -1,0 +1,7 @@
+.idea/
+venv/
+*.pyc
+my_*
+out/
+target/
+*iml
