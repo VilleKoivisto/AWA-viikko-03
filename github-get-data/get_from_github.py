@@ -15,10 +15,7 @@ def get_github_data():
     return github_json
 
 
-if __name__ == "__main__":
-    print("All Python related repos in Github atm:")
-    python_thingies = get_github_data()
-
+def print_data(python_thingies):
     get_forks = []
 
     for data_items in python_thingies["items"]:
@@ -38,3 +35,10 @@ if __name__ == "__main__":
 
     for item in sorted_forks:
         print(f"{item[0]}.{item[2]}.{item[1]}")
+
+
+if __name__ == "__main__":
+    print("All Python related repos in Github atm:")
+    python_thingies = get_github_data()
+    
+    print_data(python_thingies)
