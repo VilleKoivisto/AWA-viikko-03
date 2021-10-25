@@ -28,7 +28,7 @@ def get_values(user_input):
     v_median = find_median(values_in_list)
     v_mode = statistics.mode(values_in_list)
 
-    return v_min, v_max, v_mean, v_median, v_mode
+    return values_in_list, v_min, v_max, v_mean, v_median, v_mode
 
 
 def find_median(values_list):
@@ -52,13 +52,14 @@ if __name__ == "__main__":
 
         try:
             get_values(user_input)
-            num_min, num_max, num_mean, num_median, num_mode = get_values(user_input)
+            all_values, num_min, num_max, num_mean, num_median, num_mode = get_values(user_input)
 
         except ValueError:
             print("\nPlease give only integers or float values.\n")
 
-        print(f"\nMin value: {num_min}")
+        print(f"\nAll values: {all_values}")
+        print(f"Min value: {num_min}")
         print(f"Max value: {num_max}")
-        print(f"Mean value: {num_mean}")
+        print(f"Mean: {num_mean}")
         print(f"Median: {num_median}")
         print(f"Mode: {num_mode}\n")
