@@ -3,9 +3,12 @@ Järjestää tiedostosta luetut sanat ensisijaisesti pituuden mukaan ja toissija
 Kirjoittaa järkätyt sanat uuteen tiedostoon
 """
 
-def read_the_file():
+import argparse
+
+
+def read_the_file(filename):
     try:
-        with open("alkusanat.txt", "r") as the_file:
+        with open(filename, "r") as the_file:
             words = []
 
             for word in the_file:
@@ -23,4 +26,8 @@ def read_the_file():
 
 
 if __name__ == "__main__":
-    read_the_file()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("file")
+    arguments = parser.parse_args()
+
+    read_the_file(arguments.file)
