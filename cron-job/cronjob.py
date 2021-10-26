@@ -1,5 +1,5 @@
 """
-Yksinkertainen GRON job
+Yksinkertainen CRON job
 """
 
 from datetime import datetime
